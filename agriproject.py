@@ -7,11 +7,11 @@ from PIL import Image
 import requests
 
 # Set up Google API Key
-GOOGLE_API_KEY = "YOUR_API_KEY"  # Replace with your actual API key
+GOOGLE_API_KEY = "AIzaSyDJynD3eh_-xDNHfi-18kOkb-RvLiuRTaU"  # Replace with your actual API key
 genai.configure(api_key=GOOGLE_API_KEY)
 
 # YouTube API Key
-YOUTUBE_API_KEY = "YOUR_API_KEY"  # Replace with your actual YouTube API key
+YOUTUBE_API_KEY = "AIzaSyASK18r_R9QNjb936ITzhqINRUVyJIeqUs"  # Replace with your actual YouTube API key
 
 # Initialize the Gemini model
 model = genai.GenerativeModel('gemini-1.5-flash-002')
