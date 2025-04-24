@@ -2,6 +2,7 @@ import streamlit as st
 import os
 import random
 from googleapiclient.discovery import build
+from PIL import Image
 
 # Set page config
 st.set_page_config(page_title="Agri Chatbot", layout="centered")
