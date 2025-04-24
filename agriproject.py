@@ -38,7 +38,6 @@ language_options = {
         "input_method_options": ["Type your question"],
         "submit_button": "Submit",
         "response_label": "Chatbot Response:",
-        "audio_output_button": "Listen to the response",
         "disease_prediction": "Plant Disease Prediction",
         "upload_image": "Upload an image of your crop/plant",
         "predict_button": "Predict Disease",
