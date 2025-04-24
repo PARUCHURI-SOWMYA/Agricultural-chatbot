@@ -35,9 +35,8 @@ language_options = {
             "Soil Health": ["Soil Testing", "Fertilizer Application", "Soil Conservation"]
         },
         "input_label": "Ask me anything about {}:",
-        "input_method_options": ["Type your question", "Speak your question"],
+        "input_method_options": ["Type your question"],
         "submit_button": "Submit",
-        "audio_input_button": "Speak your question",
         "response_label": "Chatbot Response:",
         "audio_output_button": "Listen to the response",
         "disease_prediction": "Plant Disease Prediction",
