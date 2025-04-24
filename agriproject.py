@@ -35,7 +35,7 @@ language_options = {
             "Soil Health": ["Soil Testing", "Fertilizer Application", "Soil Conservation"]
         },
         "input_label": "Ask me anything about {}:",
-        "input_method_options": ["Type your question", "Speak your question"],
+        "input_method_options": ["Type your question"],
         "submit_button": "Submit",
         "disease_prediction": "Plant Disease Prediction",
         "upload_image": "Upload an image of your crop/plant",
@@ -71,9 +71,6 @@ language_options = {
         "input_label": "{} గురించి ఏదైనా అడగండి:",
         "input_method_options": ["మీ ప్రశ్నను టైప్ చేయండి", "మీ ప్రశ్నను మాట్లాడండి"],
         "submit_button": "సమర్పించండి",
-        "audio_input_button": "మీ ప్రశ్నను మాట్లాడండి",
-        "response_label": "చాట్‌బాట్ ప్రతిస్పందన:",
-        "audio_output_button": "ప్రతిస్పందనను వినండి",
         "disease_prediction": "పంట రోగ నిర్ధారణ",
         "upload_image": "మీ పంట/మొక్క యొక్క చిత్రాన్ని అప్‌లోడ్ చేయండి",
         "predict_button": "రోగాన్ని నిర్ధారించండి",
@@ -108,9 +105,6 @@ language_options = {
         "input_label": "{} के बारे में कुछ भी पूछें:",
         "input_method_options": ["अपना प्रश्न टाइप करें", "अपना प्रश्न बोलें"],
         "submit_button": "जमा करें",
-        "audio_input_button": "अपना प्रश्न बोलें",
-        "response_label": "चैटबॉट प्रतिक्रिया:",
-        "audio_output_button": "प्रतिक्रिया सुनें",
         "disease_prediction": "पौध रोग पूर्वानुमान",
         "upload_image": "अपनी फसल/पौधे की तस्वीर अपलोड करें",
         "predict_button": "रोग की पहचान करें",
@@ -237,11 +231,7 @@ if mode == labels["modes"][0]:  # Agriculture Chat
     user_input = ""
     if input_method == labels["input_method_options"][0]:  # Type your question
         user_input = st.text_input(labels["input_label"].format(sub_option), "")
-    else:  # Speak your question
-        if st.button(labels["audio_input_button"]):
-            with sr.Microphone() as source:
-                st.write("Listening...")
-                audio = recognizer.listen(source)
+    else:
                 try:
                     user_input = recognizer.recognize_google(audio, language='te-IN' if language == "Telugu" else 'hi-IN' if language == "Hindi" else 'en-US')
                     st.write(f"**You said:** {user_input}")
