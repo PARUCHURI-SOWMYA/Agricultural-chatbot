@@ -72,9 +72,7 @@ language_options = {
         "input_label": "{} గురించి ఏదైనా అడగండి:",
         "input_method_options": ["మీ ప్రశ్నను టైప్ చేయండి", "మీ ప్రశ్నను మాట్లాడండి"],
         "submit_button": "సమర్పించండి",
-        "audio_input_button": "మీ ప్రశ్నను మాట్లాడండి",
         "response_label": "చాట్‌బాట్ ప్రతిస్పందన:",
-        "audio_output_button": "ప్రతిస్పందనను వినండి",
         "disease_prediction": "పంట రోగ నిర్ధారణ",
         "upload_image": "మీ పంట/మొక్క యొక్క చిత్రాన్ని అప్‌లోడ్ చేయండి",
         "predict_button": "రోగాన్ని నిర్ధారించండి",
@@ -109,9 +107,7 @@ language_options = {
         "input_label": "{} के बारे में कुछ भी पूछें:",
         "input_method_options": ["अपना प्रश्न टाइप करें", "अपना प्रश्न बोलें"],
         "submit_button": "जमा करें",
-        "audio_input_button": "अपना प्रश्न बोलें",
         "response_label": "चैटबॉट प्रतिक्रिया:",
-        "audio_output_button": "प्रतिक्रिया सुनें",
         "disease_prediction": "पौध रोग पूर्वानुमान",
         "upload_image": "अपनी फसल/पौधे की तस्वीर अपलोड करें",
         "predict_button": "रोग की पहचान करें",
@@ -228,9 +224,8 @@ if mode == labels["modes"][0]:  # Agriculture Chat
     # Main chat interface
     st.write(f"**మీరు ఎంచుకున్నది:** {main_option} - {sub_option}" if language == "Telugu" else f"**आपने चुना:** {main_option} - {sub_option}" if language == "Hindi" else f"**You selected:** {main_option} - {sub_option}")
 
-    # User input (text or audio)
+    # User input (text)
     input_method = st.radio(
-        labels["input_method_options"][0] + " / " + labels["input_method_options"][1],
         labels["input_method_options"],
         key="input_method"
     )
@@ -239,7 +234,6 @@ if mode == labels["modes"][0]:  # Agriculture Chat
     if input_method == labels["input_method_options"][0]:  # Type your question
         user_input = st.text_input(labels["input_label"].format(sub_option), "")
     else:  # Speak your question
-        return user_input
 
     # Submit button
     if st.button(labels["submit_button"]):
