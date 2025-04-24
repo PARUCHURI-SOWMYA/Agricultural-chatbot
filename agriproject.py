@@ -240,17 +240,7 @@ if mode == labels["modes"][0]:  # Agriculture Chat
     if input_method == labels["input_method_options"][0]:  # Type your question
         user_input = st.text_input(labels["input_label"].format(sub_option), "")
     else:  # Speak your question
-        if st.button(labels["audio_input_button"]):
-            with sr.Microphone() as source:
-                st.write("Listening...")
-                audio = recognizer.listen(source)
-                try:
-                    user_input = recognizer.recognize_google(audio, language='te-IN' if language == "Telugu" else 'hi-IN' if language == "Hindi" else 'en-US')
-                    st.write(f"**You said:** {user_input}")
-                except sr.UnknownValueError:
-                    st.error("Sorry, I could not understand the audio.")
-                except sr.RequestError:
-                    st.error("Could not request results; check your internet connection.")
+        return user_input
 
     # Submit button
     if st.button(labels["submit_button"]):
@@ -270,7 +260,7 @@ if mode == labels["modes"][0]:  # Agriculture Chat
             except Exception as e:
                 st.error(f"An error occurred: {e}")
         else:
-            st.warning("Please enter or speak a question before submitting.")
+            st.warning("Please enter a question before submitting.")
 
 # Disease Prediction Mode
 elif mode == labels["modes"][1]:  # Disease Prediction
