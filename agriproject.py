@@ -2,9 +2,6 @@ import streamlit as st
 import os
 import random
 from googleapiclient.discovery import build
-from dotenv import load_dotenv
-
-load_dotenv()
 
 # Set page config
 st.set_page_config(page_title="Agri Chatbot", layout="centered")
