@@ -125,6 +125,15 @@ if mode == labels["chat_mode"]:
 elif mode == labels["predict_mode"]:
     crop = st.selectbox(f"🌱 {labels['select_crop']}", ["Tomato", "Potato", "Rice", "Wheat"])
     disease = st.selectbox(f"🦠 {labels['select_disease']}", ["Leaf Blight", "Root Rot", "Powdery Mildew"])
+# Disease Prediction Mode
+elif mode == labels["modes"][1]:  # Disease Prediction
+    st.sidebar.title(labels["disease_prediction"])
+    uploaded_image = st.sidebar.file_uploader(labels["upload_image"], type=["jpg", "jpeg", "png"])
+
+    # Display disease prediction results
+    if uploaded_image is not None:
+        image = Image.open(uploaded_image)
+        st.image(image, caption="Uploaded Image", use_column_width=True)
 
     if st.button(labels["submit"]):
         suggestions = get_suggestions(crop, disease)
